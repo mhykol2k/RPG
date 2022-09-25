@@ -5,8 +5,10 @@
 [ext_resource path="res://UI/HealthUI.gd" type="Script" id=3]
 
 [node name="HealthUI" type="Control"]
-margin_right = 88.0
-margin_bottom = 16.0
+margin_left = 11.0
+margin_top = 9.0
+margin_right = 99.0
+margin_bottom = 25.0
 script = ExtResource( 3 )
 
 [node name="HeartUIEmpty" type="TextureRect" parent="."]
