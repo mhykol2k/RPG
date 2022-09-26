@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=2]
+[gd_scene load_steps=166 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=2]
@@ -37,6 +37,8 @@
 [ext_resource path="res://World/Tilesets/Water/rock4.png" type="Texture" id=35]
 [ext_resource path="res://World/Tilesets/Water/rock5.png" type="Texture" id=36]
 [ext_resource path="res://World/Tilesets/Water/rock1.png" type="Texture" id=37]
+[ext_resource path="res://Enemies/Slime.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Enemies/Ghost.tscn" type="PackedScene" id=39]
 
 [sub_resource type="ConvexPolygonShape2D" id=94]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -6873,6 +6875,19 @@ scale = Vector2( 0.8, 0.8 )
 [node name="Bat3" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -112, 320 )
 scale = Vector2( 0.8, 0.8 )
+
+[node name="Slime" parent="YSort" instance=ExtResource( 38 )]
+position = Vector2( 72, -48 )
+
+[node name="Slime2" parent="YSort" instance=ExtResource( 38 )]
+position = Vector2( 8.00002, -64 )
+
+[node name="Slime3" parent="YSort" instance=ExtResource( 38 )]
+position = Vector2( -56, -40 )
+
+[node name="Ghost" parent="YSort" instance=ExtResource( 39 )]
+position = Vector2( -96, 7.99999 )
+scale = Vector2( 0.3, 0.3 )
 
 [node name="HealthUI" parent="." instance=ExtResource( 8 )]
 margin_left = -128.0

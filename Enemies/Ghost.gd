@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 
-export var ACCELERATION = 200
+export var ACCELERATION = 300
 export var MAX_SPEED = 20
 export var FRICTION = 200
 export var WANDER_TARGET_RANGE = 4
@@ -73,7 +73,7 @@ func seek_player():
 		
 func update_wander():
 	state = pick_random_state([IDLE, WANDER])
-	wanderController.start_wander_timer(rand_range(1, 6))
+	wanderController.start_wander_timer(rand_range(1, 2))
 
 func pick_random_state(state_list):
 	state_list.shuffle()
@@ -81,7 +81,7 @@ func pick_random_state(state_list):
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
-	knockback = area.knockback_vector * 90
+	knockback = area.knockback_vector * 120
 	hurtbox.create_hit_effect()
 	hurtbox.start_invincibility(0.4)
 	
@@ -98,4 +98,3 @@ func _on_Hurtbox_invincibility_started():
 
 func _on_Hurtbox_invincibility_ended():
 	animationPlayer.play("Stop")
-
