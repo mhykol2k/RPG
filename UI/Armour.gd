@@ -9,13 +9,13 @@ onready var armourUIEmpty = $ArmourUIEmpty
 func set_armour(value):
 	armour = clamp(value, 0, max_armour)
 	if armourUIFull != null:
-		armourUIFull.rect_size.x = armour * 15
+		armourUIFull.rect_size.x = armour * 16
 	
 func set_max_armour(value):
 	max_armour = max(value, 1)
 	self.armour = min(armour, max_armour)
 	if armourUIEmpty != null:
-		armourUIEmpty.rect_size.x = max_armour * 15
+		armourUIEmpty.rect_size.x = max_armour * 16
 	
 func _ready():
 	self.max_armour = PlayerStats.max_armour

@@ -66,6 +66,9 @@ func move_state(delta):
 	
 	if Input.is_action_just_pressed("roll"):
 		state = ROLL
+		stats.stamina -= 1
+		if stats.stamina <= 0:
+			state = MOVE
 	
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
@@ -90,7 +93,7 @@ func roll_animation_finished():
 func attack_animation_finished():
 	state = MOVE
 
-func _on_Hurtbox_area_entered(area):
+func _on_Hurtbox_area_entered(area):	
 	if stats.armour >= 1:
 		stats.armour -= area.damage
 		hurtbox.start_invincibility(1)
