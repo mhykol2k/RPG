@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=2]
+[gd_scene load_steps=167 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=5]
 [ext_resource path="res://World/Grass.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
-[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/Armour.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Music and Sounds/The Icy Cave.wav" type="AudioStream" id=11]
@@ -39,6 +39,7 @@
 [ext_resource path="res://World/Tilesets/Water/rock1.png" type="Texture" id=37]
 [ext_resource path="res://Enemies/Slime.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Enemies/Ghost.tscn" type="PackedScene" id=39]
+[ext_resource path="res://UI/Health.tscn" type="PackedScene" id=40]
 
 [sub_resource type="ConvexPolygonShape2D" id=94]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -6889,27 +6890,15 @@ position = Vector2( -56, -40 )
 position = Vector2( -96, 7.99999 )
 scale = Vector2( 0.3, 0.3 )
 
-[node name="HealthUI" parent="." instance=ExtResource( 8 )]
-margin_left = -128.0
-margin_top = -72.0
-margin_right = -40.0
-margin_bottom = -56.0
-
-[node name="HeartUIEmpty" parent="HealthUI" index="0"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 63.0
-margin_bottom = 15.0
-
-[node name="HeartUIFull" parent="HealthUI" index="1"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 48.0
-margin_bottom = 15.0
-
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -10.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Health" parent="CanvasLayer" instance=ExtResource( 40 )]
+margin_right = 64.0
+
+[node name="Armour" parent="CanvasLayer" instance=ExtResource( 8 )]
+
 [editable path="Camera2D"]
-[editable path="HealthUI"]

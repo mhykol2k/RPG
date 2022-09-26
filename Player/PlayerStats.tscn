@@ -4,3 +4,4 @@
 
 [node name="PlayerStats" instance=ExtResource( 1 )]
 max_health = 6
+max_armour = 4
