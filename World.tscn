@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=2]
+[gd_scene load_steps=169 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=2]
@@ -41,6 +41,7 @@
 [ext_resource path="res://Enemies/Ghost.tscn" type="PackedScene" id=39]
 [ext_resource path="res://UI/Health.tscn" type="PackedScene" id=40]
 [ext_resource path="res://UI/Stamina.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Enemies/HealingItem.tscn" type="PackedScene" id=43]
 
 [sub_resource type="ConvexPolygonShape2D" id=94]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -6857,6 +6858,9 @@ position = Vector2( -210, 614 )
 
 [node name="Little-Dark-Tree6" parent="YSort/Trees" instance=ExtResource( 31 )]
 position = Vector2( -128, 384 )
+
+[node name="HealingItem" parent="YSort" instance=ExtResource( 43 )]
+position = Vector2( 32, -24 )
 
 [node name="Bat" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -24, 352 )
